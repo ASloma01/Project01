@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css  ">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-size: 12px;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+    body{
+      position: relative;
+      height: 100vh;
+      background-image: linear-gradient(hsl(273, 75%, 66%), hsl(14, 88%, 65%));
+    }
+    .wrapper{
+      width: 1440px;
+      height: 768px;
+      background-color: white;
+      border-radius: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .bgimg{
+      position: relative;
+    }
+    img{
+      position: absolute;
+    }
+    .bg1{
+      top: -20%;
+      left: -25%;
+    }
+    .bg2{
+      width: 323px;
+      top: 40%;
+      left: -5%;
+      z-index: 1;
+    }
+    .bg3 img{
+      width: 650px;
+      top: 123px;
+      left: -3%;
+      z-index: -1;
+    }
+    div.quesection{
+      margin-left:720px;
+      margin-top: 160px;
+      margin-right:50px;
+      height: 448px;
+    }
+    div.que{
+      border-bottom: 1px solid gray;
+      transition: 1s;
+    }
+    h1{
+      font-size: 45px;
+      padding-bottom: 15px;
+    }
+    a{
+      display: inline-block;
+      font-size: 25px;
+      padding: 20px 0;
+      width: 720px;
+      cursor: pointer;
+    }
+    i{
+      color: orange;
+      font-size: 25px;
+      float: right;
+      margin-right:70px;
+    }
+    div a.gr:hover{
+      font-weight: bold;
+    }
+    .active{
+      display: inline-block;
+    }
+    .answer{
+      display: none;
+    }
+    .rot{
+      transform: rotate(180deg);
+    }
+    div.que.active .answer{
+      display: initial;
+    }
+    div.que.active i{
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+     <div class="bgimg bg1">
+       <img src="images/bg-pattern-desktop.svg" alt="">
+     </div>
+      <div class="bgimg bg2">
+        <img src="images/illustration-box-desktop.svg" alt="">
+     </div>
+     <div class="bgimg bg3">
+       <img src="images/illustration-woman-online-desktop.svg" alt="">
+     </div>
+    <div class="quesection">
+      <h1>FAQ</h1>
+     <div class="que">
+        <a class="gr">How many team members can I invite?<i class="fas fa-angle-down"></i></a>
+        <p class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on 
+        team members for the Premium plan.</p>
+      </div>
+      <div class="que">
+        <a class="gr">What is the maximum file upload size? <i class="fas fa-angle-down"></i></a>
+        <p class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+      </div>
+      <div class="que">
+        <a class="gr">How do I reset my password? <i class="fas fa-angle-down"></i></a>
+        <p class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+        A reset link will be emailed to you.</p>
+     </div>
+        <div class="que">
+        <a class="gr">Can I cancel my subscription? <i class="fas fa-angle-down"></i></a>
+        <p class="answer"> Send us a message and we’ll process your request no questions asked.</p>
+      </div>
+     <div class="que">
+       <a class="gr">Do you provide additional support? <i class="fas fa-angle-down"></i></a>
+       <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+let questions = document.querySelectorAll(".que");
+
+for (var i = 0; i < questions.length; i++) {
+    questions[i].addEventListener("click", function(event) {
+      //Toggle active class when clicked
+      this.classList.toggle("active");
+    });
+  } 
+
+  </script>
+</body>
+</html>
+<!--  -->
